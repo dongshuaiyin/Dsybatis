@@ -9,6 +9,10 @@
         <typeAlias alias="User" type="com.dsy.mybatis.pojo.User"/>
     </typeAliases>
 
+    <plugins>
+        <plugin interceptor="com.dsy.mybatis.plugin.MybatisQueryPlugin"></plugin>
+    </plugins>
+    
     <environments default="development">
         <environment id="development">
             <transactionManager type="JDBC"/> <!-- 单独使用时配置成MANAGED没有事务 -->
