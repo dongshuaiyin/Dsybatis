@@ -1,4 +1,6 @@
+import com.dsy.mybatis.mapper.FeeMapper;
 import com.dsy.mybatis.mapper.UserMapper;
+import com.dsy.mybatis.pojo.Fee;
 import com.dsy.mybatis.pojo.User;
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
@@ -37,5 +39,13 @@ public class MybatisTest {
         UserMapper mapper = sqlSession.getMapper(UserMapper.class);
         List<User> users = mapper.selectOne("1");
         System.out.println(users);
+    }
+
+    @Test
+    public void Test2() {
+        SqlSession sqlSession = sqlSessionFactory.openSession();
+        FeeMapper mapper = sqlSession.getMapper(FeeMapper.class);
+        List<Fee> fees = mapper.selectListByDate("2020-02-01", 1);
+        System.out.println(fees);
     }
 }

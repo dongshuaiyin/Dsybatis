@@ -1,13 +1,19 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
+    <!-- 读取配置文件 -->
     <properties resource="db.properties"/>
 
     <!-- 添加别名，在xml中的返回类型可以用这个 -->
     <typeAliases>
         <typeAlias alias="User" type="com.dsy.mybatis.pojo.User"/>
+        <typeAlias alias="Fee" type="com.dsy.mybatis.pojo.Fee"/>
     </typeAliases>
 
+   <!-- <plugins>
+        <plugin interceptor="com.dsy.mybatis.plugin.MybatisQueryPlugin"></plugin>
+    </plugins>-->
+    
     <environments default="development">
         <environment id="development">
             <transactionManager type="JDBC"/> <!-- 单独使用时配置成MANAGED没有事务 -->
@@ -22,5 +28,6 @@
 
     <mappers>
         <mapper resource="mapper/UserMapper.xml"></mapper>
+        <mapper resource="mapper/FeeMapper.xml"></mapper>
     </mappers>
 </configuration>

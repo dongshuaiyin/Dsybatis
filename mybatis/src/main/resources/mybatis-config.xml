@@ -7,11 +7,12 @@
     <!-- 添加别名，在xml中的返回类型可以用这个 -->
     <typeAliases>
         <typeAlias alias="User" type="com.dsy.mybatis.pojo.User"/>
+        <typeAlias alias="Fee" type="com.dsy.mybatis.pojo.Fee"/>
     </typeAliases>
 
-    <plugins>
+   <!-- <plugins>
         <plugin interceptor="com.dsy.mybatis.plugin.MybatisQueryPlugin"></plugin>
-    </plugins>
+    </plugins>-->
     
     <environments default="development">
         <environment id="development">
@@ -27,5 +28,6 @@
 
     <mappers>
         <mapper resource="mapper/UserMapper.xml"></mapper>
+        <mapper resource="mapper/FeeMapper.xml"></mapper>
     </mappers>
 </configuration>
